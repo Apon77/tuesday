@@ -46,11 +46,16 @@ document.getElementById("btnRemove").addEventListener("click", function () {
   removeTasks(4);
 });
 
+getIP();
+
 function addTask(task) {
   let id = push(child(ref(db), "tasks")).key;
+  let ipaddress = document.getElementById("demo").textContent;
+  let timenow = Date.now();
   set(ref(db, "tasks/" + id), {
     task: task,
-    test: "nice",
+    ip: ipaddress,
+    time: timenow
   });
   document.getElementById("tableid").innerHTML = `<tr>
   <td>Tasks</td>
@@ -110,4 +115,17 @@ function removeTasks(task) {
       );
     }
   }
+}
+
+function getIP() {
+  const Http = new XMLHttpRequest();
+  const url = "https://ipecho.net/plain";
+  Http.open("GET", url);
+  Http.send();
+
+  Http.onreadystatechange = (e) => {
+    if (Http.readyState == 4 && Http.status == 200) {
+      document.getElementById("demo").innerHTML = Http.responseText;
+    }
+  };
 }

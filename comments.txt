@@ -1,0 +1,58 @@
+// create database & connect to it
+// mongosh
+// use amitdb
+// db.emp.insert({ "empname": "Tom", "empage": 25 }) //old version
+// show collections
+
+// db.inventory.insertOne({
+//   item: "canvas",
+//   qty: 100,
+//   tags: ["cotton"],
+//   size: { h: 28, w: 35.5, uom: "cm" },
+// }); //insert one at a time
+
+// db.inventory.insertMany([
+//   { item: "journal", qty: 25, size: { h: 14, w: 21, uom: "cm" }, status: "A" },
+//   {
+//     item: "notebook",
+//     qty: 50,
+//     size: { h: 8.5, w: 11, uom: "in" },
+//     status: "A",
+//   },
+//   { item: "paper", qty: 100, size: { h: 8.5, w: 11, uom: "in" }, status: "D" },
+//   {
+//     item: "planner",
+//     qty: 75,
+//     size: { h: 22.85, w: 30, uom: "cm" },
+//     status: "D",
+//   },
+//   {
+//     item: "postcard",
+//     qty: 45,
+//     size: { h: 10, w: 15.25, uom: "cm" },
+//     status: "A",
+//   },
+// ]); //insert multiple entries with array
+
+// db.inventory.find({}); //finds all
+// db.inventory.find({ status: "D" }); //finds specific
+// db.inventory.find({ status: { $in: ["A", "D"] } }); //$in operator says either A or D
+// db.inventory.updateMany({ status: "A" }, { $set: { qty: 999 } });
+// db.inventory.deleteMany({ status: "A" });
+// let words = [];
+
+// document.getElementById("btnSubmit").addEventListener("click", addtask);
+
+
+// function addtask() {
+//   let task = document.getElementById("inputid").value;
+//   console.log(task);
+//   words.push(task);
+//   document.getElementById("inputid").value = "";
+// }
+
+// textbox to add task to database, create
+// show tasks from database, read
+// remove task from database, delete
+// edit task from databse, update
+

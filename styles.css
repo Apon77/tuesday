@@ -15,3 +15,15 @@ tr {
   background-color: rgb(226, 230, 230);
   padding: 20px;
 }
+
+.board{
+  color:blue;
+  font-size: x-large;
+  font-family: Poppins, Roboto, Rubik, Noto Kufi Arabic, Noto Sans JP, sans-serif;
+}
+
+.headrow{
+  color:grey;
+  border-right: 1px solid black;
+  padding-right: 2px;
+}
